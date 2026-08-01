@@ -1,0 +1,100 @@
+.recipient-access {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  border: 1px solid var(--line-accent);
+  border-top: 2px solid var(--accent);
+  background: rgba(13, 13, 12, 0.34);
+  box-shadow: var(--shadow-small);
+}
+
+.recipient-access h3 {
+  margin: var(--space-2) 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.recipient-access > p {
+  margin: 0 0 var(--space-4);
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.batch-access-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+.reveal-action {
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  transition: transform var(--fast) var(--ease), background-color var(--fast) var(--ease), color var(--fast) var(--ease), opacity var(--fast) var(--ease);
+}
+
+.reveal-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.reveal-action:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(226, 170, 72, 0.4);
+}
+
+.reveal-action:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.private-result {
+  min-height: 76px;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.private-result > span:first-child,
+.private-result small {
+  color: var(--text-muted);
+  font: 12px DM Mono;
+  letter-spacing: 0.06em;
+}
+
+.private-result > strong {
+  margin: var(--space-1) 0;
+  color: var(--success);
+  font: 24px DM Mono;
+}
+
+.private-result > span.masked-value {
+  color: var(--text-muted);
+  font: 18px DM Mono;
+  letter-spacing: 0.12em;
+}
+
+@media (hover: hover) {
+  .reveal-action:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+}
+
+@media (max-width: 380px) {
+  .batch-access-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-action {
+    transition-duration: 0ms;
+  }
+}

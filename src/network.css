@@ -1,0 +1,4 @@
+.network i {
+  background: var(--accent);
+  box-shadow: 0 0 20px rgba(226, 170, 72, 0.3);
+}

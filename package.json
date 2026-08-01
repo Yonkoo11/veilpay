@@ -1,0 +1,45 @@
+{
+  "name": "veilpay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "contract:compile": "hardhat compile",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "demo:sepolia": "hardhat run scripts/run-sepolia-demo.ts --network sepolia",
+    "verify:sepolia": "tsx scripts/verify-sepolia.ts",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.app.json",
+    "typecheck:deploy": "tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --skipLibCheck scripts/deploy.ts scripts/run-sepolia-demo.ts scripts/verify-sepolia.ts",
+    "test": "hardhat test",
+    "test:unit": "node --test --experimental-strip-types test/unit/*.test.ts",
+    "test:ui": "playwright test",
+    "check": "npm run typecheck && npm run typecheck:deploy && npm run test:unit && npm run build && npm run contract:compile"
+  },
+  "dependencies": {
+    "@iexec-nox/handle": "0.1.0-beta.13",
+    "@iexec-nox/nox-confidential-contracts": "^0.2.2",
+    "@iexec-nox/nox-protocol-contracts": "^0.2.4",
+    "@openzeppelin/contracts": "^5.6.1",
+    "svelte": "^5.0.0",
+    "viem": "^2.46.3"
+  },
+  "devDependencies": {
+    "@iexec-nox/nox-hardhat-plugin": "0.1.0",
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.3",
+    "@playwright/test": "^1.61.0",
+    "@sveltejs/vite-plugin-svelte": "^6.0.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.11.0",
+    "hardhat": "^3.4.0",
+    "svelte-check": "^4.0.0",
+    "tsx": "4.23.1",
+    "typescript": "~5.8.0",
+    "vite": "^7.0.0"
+  },
+  "overrides": {
+    "@nomicfoundation/hardhat-node-test-runner": "3.0.9"
+  }
+}

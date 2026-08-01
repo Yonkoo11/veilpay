@@ -1,0 +1,55 @@
+.mobile-settlement {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .mobile-settlement {
+    position: fixed;
+    z-index: 7;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 80px;
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--line-accent);
+    box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.28);
+  }
+
+  .mobile-settlement span {
+    display: grid;
+  }
+
+  .mobile-settlement small {
+    color: var(--text-muted);
+    font: 12px DM Mono;
+    letter-spacing: 0.06em;
+  }
+
+  .mobile-settlement strong {
+    font: 500 16px DM Mono;
+  }
+
+  .mobile-settlement button {
+    min-height: 48px;
+    padding: 0 var(--space-4);
+    border: 0;
+    border-radius: var(--radius-small);
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 700;
+  }
+
+  .mobile-settlement button:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(226, 170, 72, 0.4);
+  }
+
+  .mobile-settlement button:active {
+    transform: scale(0.97);
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "${configDir}/dist-contracts",
+    "declaration": true,
+    "declarationMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "noUncheckedSideEffectImports": true,
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    "composite": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "typeRoots": ["${configDir}/node_modules/@types"]
+  },
+  "exclude": ["${configDir}/dist-contracts", "${configDir}/node_modules", "${configDir}/src"]
+}
