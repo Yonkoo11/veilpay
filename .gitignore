@@ -65,3 +65,5 @@ proposals/
 offchain-services.log
 cache/
 dist-contracts/
+video/public/audio/narration-raw.mp3
+video/public/audio/narration-fast.wav

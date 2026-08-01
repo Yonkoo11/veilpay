@@ -1,0 +1,13 @@
+Payroll belongs onchain. Salaries do not belong in public. VeilPay keeps each allocation private while settlement stays verifiable.
+
+This is confidentiality, not anonymity. Addresses and timing remain visible. Individual amounts do not appear in plaintext onchain.
+
+The browser encrypts both values for the VeilPayroll contract. Nox validates those handles, adds them confidentially, and enforces access onchain. Each recipient gets only their allocation. The treasury can inspect the private total.
+
+Batch zero is real Sepolia state, created through the official Nox clients. Authorized decryption returned one and two test units, with a confidential total of three. The publication transaction made only that total publicly decryptable.
+
+Any judge can open the live app, enter batch zero, and verify three USDC. No wallet or secret is needed to inspect the deliberately public aggregate.
+
+Fifteen contract and unit checks plus six browser checks pass. They cover encrypted arithmetic, recipient isolation, outsider denial, and responsive live reads.
+
+VeilPay is private payroll with a deliberate path to public accountability. Built on Ethereum Sepolia with iExec Nox.

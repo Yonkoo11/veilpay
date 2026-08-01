@@ -4,6 +4,8 @@ VeilPay is an open-source confidential payroll layer built for the iExec Nox Pro
 
 **Live application:** https://yonkoo11.github.io/veilpay/
 
+**Demo video:** [76-second product demo](video/out/veilpay-demo.mp4)
+
 ![VeilPay payroll ledger](docs/screenshots/payroll-ledger.png)
 
 ## Privacy model
