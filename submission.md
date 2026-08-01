@@ -1,8 +1,8 @@
-# VeilPay — DoraHacks submission copy
+# VeilPay: DoraHacks submission copy
 
 ## One-line pitch
 
-VeilPay is a confidential payroll accounting layer that keeps individual allocations private while allowing a treasury to deliberately make only the aggregate publicly auditable.
+Private payroll allocations with an aggregate that the treasury can choose to publish.
 
 ## Links
 
@@ -15,13 +15,13 @@ VeilPay is a confidential payroll accounting layer that keeps individual allocat
 
 ## Description
 
-Public blockchains make payroll values and treasury behavior observable by default. VeilPay adds a confidential layer without modifying the transparent protocols beneath it.
+Putting payroll on a public chain usually exposes every amount. VeilPay keeps the individual allocations encrypted and gives the treasury a separate, explicit action for publishing the batch total.
 
-The browser encrypts two allocation values for the deployed VeilPayroll contract using the official iExec Nox handle client. The contract validates those encrypted handles, adds them with `Nox.add`, and grants access with Nox ACLs: each recipient receives access only to their allocation, while the treasury can inspect the encrypted total. The owner can later call `publishTotal` to make only the aggregate publicly decryptable. That decision is explicit and irreversible.
+The browser encrypts two allocations for the deployed VeilPayroll contract using the official iExec Nox handle client. The contract validates the encrypted handles, adds them with `Nox.add`, and applies Nox access controls. Each recipient receives access only to their own allocation. The treasury can inspect the encrypted total and may later call `publishTotal`, which makes that total publicly decryptable. Publication is intentional and irreversible.
 
-Verified Sepolia batch `0` used allocations of `1` and `2` test units. Authorized private decryption returned both allocations and their confidential total of `3`; after the publication transaction, a fresh browser could publicly decrypt only the `3 USDC` aggregate.
+Batch `0` is live on Sepolia. It contains allocations of `1` and `2` test units. Authorized decryption returned both values and their confidential total of `3`. After the publication transaction, a fresh browser could read the public aggregate as `3 USDC` without a wallet or secret.
 
-VeilPay is a protocol-layer demonstration. V1 proves confidential accounting and access control; it does not custody or transfer payroll tokens.
+This version proves confidential accounting and access control. It does not custody or transfer payroll tokens.
 
 ## iExec Nox integration
 
@@ -39,6 +39,6 @@ VeilPay is a protocol-layer demonstration. V1 proves confidential accounting and
 - 0 production dependency vulnerabilities from `npm audit --omit=dev`.
 - Fresh public desktop and mobile checks returned HTTP 200, `3 USDC`, zero horizontal overflow, and zero console/page errors.
 
-## Required disclosure to confirm before submission
+## Existing work and disclosure
 
-Confirm that VeilPay does not reuse a project submitted to the previous Vibe Coding Hackathon, and list any code that existed before this WTF Hackathon entry.
+The VeilPay repository was created on August 1, 2026 for this hackathon and has no earlier public commit history. The implementation uses the published iExec Nox packages and follows the project documentation. No claim is made here about private repositories that cannot be independently inspected.
